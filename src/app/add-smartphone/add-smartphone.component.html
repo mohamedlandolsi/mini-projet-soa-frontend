@@ -1,0 +1,52 @@
+<div class="container">
+  <div>
+    <h2>Ajouter un Smartphone:</h2>
+  </div>
+</div>
+<form>
+  <div hidden class="col-sm-2 col-md-2 col-lg-2">
+    <label>ID Smartphone</label>
+    <input
+      type="text"
+      [(ngModel)]="newSmartphone.smartphoneId"
+      name="idSmartphone"
+      class="form-control"
+    />
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label>Nom Smartphone</label>
+    <input
+      type="text"
+      [(ngModel)]="newSmartphone.smartphoneModel"
+      name="nomSmartphone"
+      class="form-control"
+    />
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label>Marque</label>
+    <select
+      class="form-control form-control-lg"
+      id="idCat"
+      name="idCat"
+      [(ngModel)]="newIdMarque"
+    >
+      <option *ngFor="let marque of marques" [value]="marque.marqueId">
+        {{ marque.marqueNom }}
+      </option>
+    </select>
+  </div>
+  <div class="col-sm-2 col-md-2 col-lg-2">
+    <label>Prix Smartphone</label>
+    <input
+      type="number"
+      [(ngModel)]="newSmartphone.smartphonePrice"
+      name="prixSmartphone"
+      class="form-control"
+    />
+  </div>
+  <div class="mt-2 ml-3">
+    <button type="submit" (click)="addSmartphone()" class="btn btn-success">
+      Ajouter
+    </button>
+  </div>
+</form>

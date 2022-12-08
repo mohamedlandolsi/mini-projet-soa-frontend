@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+    <app-update-marque
+      [marque]="updatedMarque"
+      (marqueUpdated)="marqueUpdated($event)"
+    ></app-update-marque>
+  </div>
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Marque</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let marque of marques">
+          <tr>
+            <td>{{ marque.marqueId }}</td>
+            <td>{{ marque.marqueNom }}</td>
+            <td>
+              <a class="btn btn-success" (click)="updateMarque(marque)"
+                >Editer</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>git commit -m "first commit"
+  </div>
+</div>

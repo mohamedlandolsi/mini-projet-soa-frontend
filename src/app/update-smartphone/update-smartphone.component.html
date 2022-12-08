@@ -1,0 +1,57 @@
+<div class="container">
+  <div>
+    <h2>Modifier un Smartphone :</h2>
+  </div>
+  <form>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>ID Produit</label>
+      <input
+        readonly
+        type="text"
+        [(ngModel)]="currentSmartphone.smartphoneId"
+        name="idSmartphone"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Nom Smartphone</label>
+      <input
+        type="text"
+        [(ngModel)]="currentSmartphone.smartphoneModel"
+        name="nomSmartphone"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Marque</label>
+      <select
+        class="form-control form-control-lg"
+        id="idCat"
+        name="idCat"
+        [(ngModel)]="updatedMarqueId"
+      >
+        <option *ngFor="let marque of marques" [value]="marque.marqueId">
+          {{ marque.marqueNom }}
+        </option>
+      </select>
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Prix Smartphone</label>
+      <input
+        type="number"
+        [(ngModel)]="currentSmartphone.smartphonePrice"
+        name="prixSmartphone"
+        class="form-control"
+      />
+    </div>
+    <div class="mt-2 ml-3">
+      <button
+        type="submit"
+        (click)="updateSmartphone()"
+        class="btn btn-success"
+      >
+        Modifer
+      </button>
+    </div>
+  </form>
+</div>
