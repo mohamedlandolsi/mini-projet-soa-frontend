@@ -6,15 +6,20 @@ import { UpdateSmartphoneComponent } from './update-smartphone/update-smartphone
 import { RechercheParMarqueComponent } from './recherche-par-marque/recherche-par-marque.component';
 import { RechercheParModelComponent } from './recherche-par-model/recherche-par-model.component';
 import { ListeMarquesComponent } from './liste-marques/liste-marques.component';
+import { LoginComponent } from './login/login.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { SmartphoneGuard } from './smartphone.guard';
 
 const routes: Routes = [
   {path: "smartphones", component : SmartphonesComponent},
-  {path: "add-smartphone", component: AddSmartphoneComponent},
+  {path: "add-smartphone", component: AddSmartphoneComponent, canActivate:[SmartphoneGuard]},
   {path: "", redirectTo: "smartphones", pathMatch: "full"},
   {path: "updateSmartphone/:id", component: UpdateSmartphoneComponent},
   {path: "rechercheParMarque", component: RechercheParMarqueComponent},
   {path: "rechercheParModel", component: RechercheParModelComponent},
-  {path: "listeMarques", component: ListeMarquesComponent}
+  {path: "listeMarques", component: ListeMarquesComponent},
+  {path: "login", component: LoginComponent},
+  {path: "app-forbidden", component: ForbiddenComponent}
 ];
 
 @NgModule({

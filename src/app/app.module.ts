@@ -12,6 +12,8 @@ import { RechercheParMarqueComponent } from './recherche-par-marque/recherche-pa
 import { RechercheParModelComponent } from './recherche-par-model/recherche-par-model.component';
 import { ListeMarquesComponent } from './liste-marques/liste-marques.component';
 import { UpdateMarqueComponent } from './update-marque/update-marque.component';
+import { LoginComponent } from './login/login.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { UpdateMarqueComponent } from './update-marque/update-marque.component';
     RechercheParMarqueComponent,
     RechercheParModelComponent,
     ListeMarquesComponent,
-    UpdateMarqueComponent
+    UpdateMarqueComponent,
+    LoginComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Smartphone } from '../model/smartphone.model';
+import { AuthService } from '../services/auth.service';
 import { SmartphoneService } from '../services/smartphone.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { SmartphoneService } from '../services/smartphone.service';
 export class SmartphonesComponent implements OnInit {
   smartphones?: Smartphone[];
 
-  constructor(private smartphoneService: SmartphoneService) {}
+  constructor(private smartphoneService: SmartphoneService, public authService: AuthService) {}
 
   ngOnInit(): void {
     this.chargerSmartphones();
